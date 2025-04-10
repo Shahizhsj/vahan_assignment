@@ -1,4 +1,4 @@
-# Research Paper Analysis Tool
+# Research Paper Analysis Tool Documentation
 
 ## Overview
 A comprehensive tool for analyzing research papers with features including file summarization, ArXiv paper search, URL summarization, DOI reference lookup, and cross-paper synthesis. The tool uses advanced AI models (Google's Gemini) for analysis and provides both text and audio outputs using ElevenLabs text-to-speech.
