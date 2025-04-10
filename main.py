@@ -1,3 +1,4 @@
+#Here we import all the important packages
 import requests
 import io
 from pydub import AudioSegment
@@ -29,7 +30,7 @@ import pandas as pd
 from langchain.agents.agent_types import AgentType
 from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
 
-
+#Importing the embedding model and llm 
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key="AIzaSyC6TmVb5Vk5J0r6z0oCmjvNgzbblDKuf3Y")
 llm = ChatGoogleGenerativeAI(
     model="models/gemini-2.0-flash",
@@ -96,7 +97,7 @@ def elevenlabs_text_to_speech_and_play(text):
     else:
         print("Error:", response.status_code, response.text)
         return None
-#prompt for LLM to summarize the research papers
+#this prompt is used to summarize the papers
 template = """
 Use the following context (delimited by <ctx></ctx>) and the chat history (delimited by <hs></hs>) to answer the question:
 ------
@@ -126,7 +127,7 @@ qa = None
 image = None
 t = 0
 sumaries=[]
-
+#this function is used to store the documents in vector store and define a retrievalQA model using langchain
 def vector(documents):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     texts = text_splitter.split_documents(documents)
@@ -142,7 +143,7 @@ def vector(documents):
             input_key="question"),
     })
     return qa
-
+#this function takes the file and process them depending on the file type 
 def file_upload(file):
     global sumaries
     global qa  # Indicate that we're modifying the global qa variable
@@ -187,6 +188,7 @@ def file_upload(file):
         return answer
     else:
       pass
+# this is use to process the URL links
 def url(link):
     try:
         loader = WebBaseLoader(link)
@@ -200,6 +202,7 @@ def url(link):
         return answer, audio
     except Exception as e:
         return f"Error processing URL: {str(e)}"
+# this used to retrive the papers with given DOI number
 def doi(doi_number):
   client = arxiv.Client()
   arxiv_search = arxiv.Search(id_list=[str(doi_number)])
@@ -234,6 +237,7 @@ def format_authors(authors):
     if isinstance(authors, list):
         return ", ".join([str(author) for author in authors])
     return str(authors)
+#used for topic wise analysis
 def cross_ana():
   global topic
   global sumaries
@@ -249,7 +253,7 @@ def cross_ana():
   audio = elevenlabs_text_to_speech_and_play(response.text)
   return response.text,audio
 
-
+#used for searching research paper online using Arvix api
 def res(query, sort_option):
     global sumaries
     try:
