@@ -32,6 +32,8 @@ A comprehensive tool for analyzing research papers with features including file 
 
 # Samples output
 
+[Demo video](https://drive.google.com/file/d/1kgDjLkuWk2rHC7siZbaQ8DB-dYHRFpUf/view?usp=sharing)
+
 ## I uploaded a paper on Inception model and you can see the summary and podcast of that summary
 
 ![File Summarization](https://github.com/Shahizhsj/vahan_assignment/blob/8ef22471733e8627a30ae9787943ddb3dbd19cdd/Screenshot%20(199).png)
