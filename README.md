@@ -29,5 +29,3 @@ A comprehensive tool for analyzing research papers with features including file 
 5. **Cross-paper Synthesis**
    - Classify papers into user-defined topics
    - Generate synthesized summaries across papers
-
-
