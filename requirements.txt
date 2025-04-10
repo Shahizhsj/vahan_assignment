@@ -1,0 +1,48 @@
+# Core dependencies
+gradio>=4.0.0
+requests>=2.31.0
+pydub>=0.25.1
+simpleaudio>=1.0.4
+ipython>=8.0.0
+
+# LangChain and related packages
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-google-genai>=0.0.5
+langchain-openai>=0.0.5
+langchain-experimental>=0.0.37
+langgraph>=0.0.10
+
+# Document processing
+unstructured>=0.10.0
+python-docx>=0.8.11
+python-pptx>=0.6.21
+pypdf>=3.0.0
+
+# Data processing and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+faiss-cpu>=1.7.4
+chromadb>=0.4.0
+
+# Google AI
+google-generativeai>=0.3.0
+
+# Audio processing
+elevenlabs>=0.2.24
+
+# Vector stores
+faiss-cpu>=1.7.4
+
+# Paper fetching
+arxiv>=2.0.0
+
+# Web scraping
+beautifulsoup4>=4.12.0
+
+# Type hints
+typing-extensions>=4.5.0
+
+# Optional but recommended
+pytest>=7.0.0  # for testing
+python-dotenv>=1.0.0  # for environment variables
